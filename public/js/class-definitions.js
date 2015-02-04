@@ -301,7 +301,10 @@ var beers  = {
  * @return {String}
  *
  */
+function sahara_river(){
 
+  return "Nile River";
+}
 
 /* Step 21
  *
@@ -314,7 +317,11 @@ var beers  = {
  *
  */
 
+function addNumbers(num1,num2){
 
+ return num1 + num2;
+
+}
 /* Step 22
  *
  * Define a function named "installLinux"
@@ -326,7 +333,15 @@ var beers  = {
  * @return {Bool}
  *
  */
+function installLinux(String){
 
+  if(linuxFlavors.indexOf(String)>=0){
+
+    return true;
+  }
+
+  else return false;
+}
 
 /* Step 23
  *
@@ -346,7 +361,23 @@ var beers  = {
  *
  */
 
+function drink(beer){
 
+  if(beers.hasOwnProperty(beer) && Array.isArray(beers[beer])){
+
+    return "This " + beer + " is " + beers[beer][0] + " and " + beers[beer][1] + "."; 
+  }
+  else if(beers.hasOwnProperty(beer)){
+
+    return "This " + beer + " is " + beers[beer] + "."; 
+
+  }
+
+  else {
+
+    return false;
+  }
+}
 /* Step 24
  *
  * Define a function named "browseURL" that takes
@@ -359,7 +390,41 @@ var beers  = {
  *
  */
 
+function browseURL(string){
 
+
+  switch(string){
+
+
+    case "Chromium":
+
+    return "google.com";
+
+    case "Safari":
+
+    return "apple.com";
+
+    case "Opera":
+
+    return "opera.com";
+
+    case "Firefox":
+
+    return "mozilla.org";
+
+    case "Konqueror":
+
+    return "konqueror.org";
+
+    default:
+
+    console.log("error");
+    return false;
+  }
+
+  return false;
+
+}
 /* Step 25
  *
  * Define a function named "listLivingOrgClass" that
