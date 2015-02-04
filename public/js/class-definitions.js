@@ -536,7 +536,15 @@ Person.prototype.earnMoney = function(amount){
  * @return {Number}
  *
  */
+function purchaseLaptop(laptop){
 
+  if(laptopCosts.hasOwnProperty(laptop)){
+
+    return laptopCosts[laptop].toString();
+  }
+
+  else return -1;
+}
 
 /* Step 29
  *
@@ -550,7 +558,15 @@ Person.prototype.earnMoney = function(amount){
  *
  */
 
+function canTalkAbout(club){
 
+  if(club === club_name){
+
+    return false;
+  }
+  else return true;
+
+}
 /* Step 30
  *
  * Define a class named "Pen" with a property for
@@ -573,7 +589,17 @@ Person.prototype.earnMoney = function(amount){
  *   write
  *
  */
+function Pen(color){
 
+
+  this.color = color;
+}
+
+Pen.prototype.write = function(message){
+
+  return this.color + ": " +message;
+
+};
 
 /* Step 31
  *
