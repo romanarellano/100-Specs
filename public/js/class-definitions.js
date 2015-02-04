@@ -662,7 +662,24 @@ Garden.prototype.grow = function(){
  *   removePlanet
  *
  */
+function SolarSystem(){
 
+
+  this.planets=[];
+}
+
+SolarSystem.prototype.addPlanet = function(planet){
+
+
+  this.planets.push(planet);
+};
+
+SolarSystem.prototype.removePlanet = function(){
+
+
+  this.planets.pop();
+
+};
 
 /* Step 33
  *
@@ -696,7 +713,42 @@ Garden.prototype.grow = function(){
  *   marries
  *
  */
+function PrincessLeia(name,money,age,gender){
 
+  this.isInTrouble = null;
+  Person.call(this,name,money,age,gender);
+}
+
+PrincessLeia.prototype = Object.create(Person.prototype,{constructor: { value : Person}});
+
+PrincessLeia.prototype.shootsGun = function(){
+
+  return this.name + "shoots her gun wildly";
+
+};
+
+PrincessLeia.prototype.getsInTrouble = function(){
+
+  return "Help me Obi-wan Kenobi, you're my only hope";
+
+};
+
+PrincessLeia.prototype.marries = function(man){
+
+  switch(man){
+
+    case "Han Solo":
+      return true;
+
+    case "Luke Skywalker":
+      return "Gross!";
+
+  
+    default:
+      return false;
+
+ }
+};
 
 /* Step 34
  *
@@ -715,7 +767,22 @@ Garden.prototype.grow = function(){
  *   staplePapers
  *
  */
+function Stapler(color,maxPapers){
 
+  this.color = color;
+  this.maxPapers = maxPapers;
+
+}
+
+Stapler.prototype.staplePapers = function(num){
+
+
+  if(num<=this.maxPapers){
+
+    return true;
+  }
+  else return false;
+};
 
 /* Step 35
  *
