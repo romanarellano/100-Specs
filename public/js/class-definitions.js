@@ -890,171 +890,12 @@ Scientist.prototype.addDiscovery = function(discovery){
  *   rob
  *
  */
+function Animal(species,gender){
 
+  this.species = species;
+  this.gender =  gender;
+}
 
-/* Step 37
- *
- * WIP
- * PacMan
- *  x
- *  y
- *  north()
- *  south()
- *  east()
- *  west()
- *  getPosition()
- *
- *
- */
-
-
-/* Step 38
- *
- * WIP
- * beer
- *  temperature 50
- *  volume 12
- *  dispense()
- *  getVolume()
- *
- */
-
-
-/* Step 39
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 40
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 41
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 42
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 43
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 44
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 45
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 46
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 47
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 48
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/* Step 49
- *
- * WIP
- * cow
- *   poops : 0
- *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
- */
-
-
-/**
- * Define a Classes
- */
 
 /**
  * Step 50
@@ -1063,7 +904,11 @@ Scientist.prototype.addDiscovery = function(discovery){
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
+function Vehicle(make,model){
 
+  this.make = make;
+  this.model = model;
+}
 
 /**
  * Step 51
