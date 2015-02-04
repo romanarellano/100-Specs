@@ -3,7 +3,7 @@
  * Declare a variable named "unicorn"
  *
  */
-
+var unicorn = "";
 
 /* Step 2
  *
@@ -11,7 +11,7 @@
  * then assign it to be the value of "Atari"
  *
  */
-
+var videogame_system = "Atari";
 
 /* Step 3
  *
@@ -19,7 +19,7 @@
  * and assign the value of sahara_animal to "The Addax"
  *
  */
-
+var sahara_animal = "The Addax";
 
 /* Step 4
  *
@@ -29,7 +29,7 @@
  * Capitalize the names.
  */
 
-
+var list =["zero","one","hawaii","tomorrow","weird",5434,["what","today"],{ wat : "break it"}];
 /* Step 5
  *
  * Declare a variable named "galilean_moons"
