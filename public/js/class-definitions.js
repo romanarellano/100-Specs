@@ -29,7 +29,7 @@ var sahara_animal = "The Addax";
  * Capitalize the names.
  */
 
-var list =["zero","one","hawaii","tomorrow","weird",5434,["what","today"],{ wat : "break it"}];
+var planets =["Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune"];
 /* Step 5
  *
  * Declare a variable named "galilean_moons"
@@ -37,6 +37,7 @@ var list =["zero","one","hawaii","tomorrow","weird",5434,["what","today"],{ wat 
  * each galilean moon of Jupiter
  *
  */
+var galilean_moons = ["Ganymede","Io","Europa","Callisto"];
 
 
 /* Step 6 φ
@@ -46,6 +47,8 @@ var list =["zero","one","hawaii","tomorrow","weird",5434,["what","today"],{ wat 
  *
  */
 
+ var golden_ratio = 1.61803398874;
+
 
 /* Step 7
  *
@@ -54,7 +57,7 @@ var list =["zero","one","hawaii","tomorrow","weird",5434,["what","today"],{ wat 
  *
  */
 
-
+var earths_water_composition = 0.71;
 /* Step 8
  *
  * Declare a variable named "club_name"
