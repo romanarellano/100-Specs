@@ -918,7 +918,12 @@ function Vehicle(make,model){
  * @param {string} model The vehicle's model
  */
 
+function Shape(number){
 
+  this.sides = number;
+
+
+}
 /**
  * Step 52
  * 
@@ -926,7 +931,11 @@ function Vehicle(make,model){
  * @param {number} sides The number of sides, should be greater than 3
  */
 
+function Box(contents,isOpen){
+  this.contents = contents;
+  this.isOpen = true;
 
+}
 /**
  * Step 53
  * 
@@ -935,15 +944,24 @@ function Vehicle(make,model){
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
 
+function Door(isOpen){
 
+  this.isOpen = true;
+
+}
 /**
  * Step 54
  * 
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
+function Shoe(size,color){
+  
+  this.size = size;
+  this.color = color;
 
 
+}
 /**
  * Step 55
  * 
@@ -952,14 +970,22 @@ function Vehicle(make,model){
  * @param {string} color The shoe color
  */
 
+function House(number){
 
+  this.stories = number;
+
+}
 /**
  * Step 56
  * 
  * House class
  * @param {number} stories How many stories tall the house is
  */
+function Lightbulb(){
 
+  this.isOn = false;
+
+}
 
 /**
  * Step 57
@@ -967,7 +993,11 @@ function Vehicle(make,model){
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
+function Cookie(string){
 
+  this.flavor = string;
+
+}
 
 /**
  * Step 58
@@ -975,7 +1005,11 @@ function Vehicle(make,model){
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
+function Meal(Array){
 
+this.foods = Array;
+
+}
 
 /**
  * Step 59
@@ -992,36 +1026,40 @@ function Vehicle(make,model){
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george = new Animal("Monkey","male");
+var nemo = new Animal("Fish","male");
 
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle("Honda","Civic");
+var forte = new Vehicle("KIA","Forte");
 
 // Create 2 shapes with different numbers of sides
-var square;
-var hexagon;
+var square = new Shape(4);
+var hexagon = new Shape(6);
 
 // Create 2 boxes
-var catBox;
-var christmasPresent;
+var cat = new Animal("Cat","male");
 
+var catBox = new Box(cat);
+var christmasPresent = new Box("keyboard");
+christmasPresent.isOpen = false;
 // Create 2 doors
-var automaticDoor;
-var bankVault;
+var automaticDoor = new Door();
+var bankVault = new Door();
+bankVault.isOpen= false;
 
 // Create 2 shoes
-var rubySlippers;
-var dressShoes;
+var rubySlippers = new Shoe(7,"red");
+var dressShoes = new Shoe(10,"black");
 
 // Create 2 houses
-var singleStory;
-var twoStory;
+var singleStory = new House(1);
+var twoStory = new House(2);
 
 // Create 2 lightbulbs
-var incandescent;
-var halogen;
+var incandescent = new Lightbulb();
+incandescent.isOn = true;
+var halogen = new Lightbulb();
 
 // Create 2 cookies of different flavors
 var chocolateChip;
