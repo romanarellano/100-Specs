@@ -64,7 +64,7 @@ var earths_water_composition = 0.71;
  * and assign the value of club_name to "Fight Club"
  *
  */
-
+var club_name = "Fight Club";
 
 /* Step 9
  *
@@ -75,7 +75,13 @@ var earths_water_composition = 0.71;
  *   male    => "male"
  *   unknown => undefined
  */
+var gender = { 
 
+  female : "female",
+  male : "male",
+  unknown : undefined
+
+};
 
 /* Step 10
  *
@@ -90,7 +96,14 @@ var earths_water_composition = 0.71;
  *
  */
 
+var princess_leia = {
 
+  name: "Leia Organa",
+  money: 890,
+  age: 20,
+  gender: gender.female
+
+};
 /* Step 11
  *
  * Define a literal object named "domains"
@@ -102,7 +115,14 @@ var earths_water_composition = 0.71;
  *   jsonformatter.curiousconcept.com => "104.28.5.70"
  *
  */
+var domains = {
 
+  "ycombinator.com": "198.41.190.47",
+  "laughingsquid.com": "162.159.247.97",
+  "slumlordhosting.com": "198.61.179.126" ,  
+  "jsonformatter.curiousconcept.com":"104.28.5.70"
+
+};
 
 /* Step 12
  *
@@ -117,7 +137,18 @@ var earths_water_composition = 0.71;
  *   Konqueror  => "konqueror.org"
  *
  */
+var browsers = {
 
+  Chromium   : "google.com",
+  Safari     : "apple.com",
+  Opera      : "opera.com",
+  Firefox    : "mozilla.org",
+  Sleipnir   : "fenrir-inc.com",
+  Konqueror  : "konqueror.org"
+ 
+
+
+};
 
 /* Step 13
  *
@@ -136,7 +167,24 @@ var earths_water_composition = 0.71;
  *
  */
 
+var rainbow = {
 
+
+  colors : {
+
+
+                  red    : "#F0280A",
+                  orange : "#FF8800",
+                  yellow : "#FFDD00",
+                  green   : "#51AB0C",
+                  blue   : "#1593ED",
+                  indigo  : "#5215ED",
+                  violet  : "#A915ED"
+
+              },
+
+  isDouble : true
+};
 /* Step 14
  *
  * Declare an array named "linuxFlavors"
@@ -150,7 +198,7 @@ var earths_water_composition = 0.71;
  * "Bieber Linux"
  *
  */
-
+var linuxFlavors = ["Gentoo","Fedora","Debian","Slackware","Red Hat","Bieber Linux"];
 
 /* Step 15
  *
@@ -164,7 +212,7 @@ var earths_water_composition = 0.71;
  * "cytosine"
  *
  */
-
+var DNA = ["nucleatides","guanine", "adenine", "thymine", "cytosine"];
 
 /* Step 16
  *
