@@ -1062,12 +1062,12 @@ incandescent.isOn = true;
 var halogen = new Lightbulb();
 
 // Create 2 cookies of different flavors
-var chocolateChip;
-var gingerbread;
+var chocolateChip = new Cookie("chocolate");
+var gingerbread = new Cookie("gingerbread");
 
 // Create 2 different meals
-var breakfast;
-var dinner;
+var breakfast = new Meal(["cereal","milk"]);
+var dinner = new Meal(["fish","vegetables"]);
 
 
  /* Steps 81 to 90
@@ -1093,6 +1093,28 @@ var dinner;
  */
 
 
+Animal.prototype.isWarmBlooded = function(){
+
+  switch(this.species){
+
+
+    case "Fish":
+
+    return false;
+    
+
+    case "Monkey":
+    return true;
+    
+
+    case "Bird":
+    return true;
+
+    default:
+    return "Could not determine if warm-blooded";
+  }
+  
+};
 /* Step 82
  *
  * Declare a Vehicle method called drive that accepts a parameter
