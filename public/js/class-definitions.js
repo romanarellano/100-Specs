@@ -976,11 +976,7 @@ function House(number){
  * House class
  * @param {number} stories How many stories tall the house is
  */
-function Lightbulb(){
 
-  this.isOn = false;
-
-}
 
 /**
  * Step 57
@@ -988,11 +984,7 @@ function Lightbulb(){
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-function Cookie(string){
 
-  this.flavor = string;
-
-}
 
 /**
  * Step 58
@@ -1288,8 +1280,23 @@ House.prototype.isATallStory = function(num){
  * Return true if isOn is true, false otherwise.
  *
  */
+ function Lightbulb(){
 
+  this.isOn = false;
 
+}
+
+Lightbulb.prototype.flipSwitch = function(on){
+
+ if(on === "on"){
+
+    this.isOn = true;
+    return true;
+ }
+
+ else return false;
+
+};
  /* Step 89
  *
  * Declare a Cookie method called swipedByCookieMonster that accepts
@@ -1297,8 +1304,19 @@ House.prototype.isATallStory = function(num){
  * and the dayOfTheWeek is "Monday", return true.  Else return false.
  *
  */
+function Cookie(string){
 
+  this.flavor = string;
 
+}
+Cookie.prototype.swipedByCookieMonster = function(dayOfTheWeek){
+
+  if(this.flavor === "chocolate" && dayOfTheWeek === "Monday"){
+
+    return true;
+  }
+  else return false;
+};
  /* Step 90
  *
  * Declare a Meal method called containsJunkFood that returns true if
