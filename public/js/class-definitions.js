@@ -434,7 +434,17 @@ function browseURL(string){
  * @return {String}
  *
  */
+function listLivingOrgClass(){
 
+var line = "";
+
+  for(var i=0;i<livingOrganismClassification.length;i++){
+
+   line += "<li>" + livingOrganismClassification[i] + "</li>";
+  }
+
+  return "<ul>" + line +  "</ul>";
+}
 
 /* Step 26
  *
@@ -456,7 +466,21 @@ function browseURL(string){
  *
  */
 
+function favoritePlanet(planet){
 
+if(planets.indexOf(planet)>=0){
+
+ var targetPlanet =  planets[Math.floor(Math.random()*planets.length)];
+
+ return  "I'm from " + planet + ", but I wish I could go to " + targetPlanet;
+}
+
+else {
+
+  return planet + " is not a planet!";
+
+}
+}
 /* Step 27
  *
  * Define a class named "Person" that has properties for
@@ -480,6 +504,26 @@ function browseURL(string){
  *
  */
 
+function Person(name,money,age,gender){
+
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+
+}
+
+Person.prototype.spendMoney = function(amount){
+
+  this.money -= amount;
+
+};
+
+Person.prototype.earnMoney = function(amount){
+
+  this.money += amount;
+
+};
 
 /* Step 28
  *
