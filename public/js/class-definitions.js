@@ -3,7 +3,7 @@
  * Declare a variable named "unicorn"
  *
  */
-var unicorn = "";
+var unicorn = null;
 
 /* Step 2
  *
@@ -637,7 +637,7 @@ function Garden(plantsTotal){
 
 Garden.prototype.water = function(){
 
-
+  this.plantsTotal +=1;
  this.isWatered = true;
 
 
@@ -645,7 +645,9 @@ Garden.prototype.water = function(){
 
 Garden.prototype.grow = function(){
 
-  this.plantsTotal+=1;
+  this.isWatered = true;
+  
+  return false;
 
 };
 
@@ -947,24 +949,14 @@ function Box(contents,isOpen){
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
 
-function Door(isOpen){
 
-  this.isOpen = true;
-
-}
 /**
  * Step 54
  * 
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-function Shoe(size,color){
-  
-  this.size = size;
-  this.color = color;
 
-
-}
 /**
  * Step 55
  * 
@@ -984,11 +976,7 @@ function House(number){
  * House class
  * @param {number} stories How many stories tall the house is
  */
-function Lightbulb(){
 
-  this.isOn = false;
-
-}
 
 /**
  * Step 57
@@ -996,11 +984,7 @@ function Lightbulb(){
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-function Cookie(string){
 
-  this.flavor = string;
-
-}
 
 /**
  * Step 58
@@ -1008,11 +992,7 @@ function Cookie(string){
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-function Meal(Array){
 
-this.foods = Array;
-
-}
 
 /**
  * Step 59
@@ -1126,7 +1106,16 @@ Animal.prototype.isWarmBlooded = function(){
  *
  */
 
+Vehicle.prototype.drive = function(streetName){
 
+  if(typeof streetName === 'string' && streetName.length > 0){
+
+
+    return "Driving on " + streetName;
+  }
+  else return "Driving forward";
+
+};
  /* Step 83
  *
  * Declare a Shape method called getType that returns a string
@@ -1144,6 +1133,40 @@ Animal.prototype.isWarmBlooded = function(){
  * Any other number => "Could not determine type"
  *
  */
+ Shape.prototype.getType = function(){
+
+  switch(this.sides){
+
+
+    case 3:
+    return "triangle";
+
+    case 4:
+    return "quadrilateral";
+
+    case 5:
+    return "pentagon";
+
+    case 6:
+    return "hexagon";
+
+    case 7:
+    return "heptagon";
+
+    case 8:
+    return "octagon";
+
+    case 9:
+    return "nonagon";
+
+    case 10:
+    return "decagon";
+
+    default:
+    return "Could not determine type";
+  }
+
+ };
 
 
 /* Step 84
@@ -1155,7 +1178,23 @@ Animal.prototype.isWarmBlooded = function(){
  *
  */
 
+Box.prototype.openBox = function(){
 
+  if(this.isOpen===true) {
+      
+      
+      return true;
+  }
+
+  else if(this.isOpen ===false){
+
+      this.isOpen = true;
+      return true;
+  }
+
+
+ 
+};
  /* Step 85
  *
  * Declare a Door method called openClose that opens the door
@@ -1163,8 +1202,27 @@ Animal.prototype.isWarmBlooded = function(){
  * Return true if openClose opens the door, false if openClose closes the door.
  *
  */
+function Door(isOpen){
+
+  this.isOpen = true;
+
+}
+Door.prototype.openClose = function(){
 
 
+  if(this.isOpen){
+
+    this.isOpen = true;
+    return true;
+  }
+
+  else {
+
+    this.isOpen = true;
+    return true;
+  }
+
+};
 /* Step 86
  *
  * Declare a Shoe method called findShoes that returns a string containing
@@ -1172,6 +1230,19 @@ Animal.prototype.isWarmBlooded = function(){
  *
  */
 
+ function Shoe(size,color){
+  
+  this.size = size;
+  this.color = color;
+
+
+}
+
+Shoe.prototype.findShoes = function(){
+
+  return "Found " + this.color +" shoes of size " +this.size;
+
+};
 
  /* Step 87
  *
@@ -1181,8 +1252,21 @@ Animal.prototype.isWarmBlooded = function(){
  * storiesTooTall, return true, else return false.
  *
  */
+ function House(number){
 
+  this.stories = number;
 
+}
+
+House.prototype.isATallStory = function(num){
+
+  if(this.stories>=num){
+
+    return true;
+  }
+  else return false;
+
+};
  /* Step 88
  *
  * Declare a Lightbulb method called flipSwitch that accepts a
@@ -1192,8 +1276,23 @@ Animal.prototype.isWarmBlooded = function(){
  * Return true if isOn is true, false otherwise.
  *
  */
+ function Lightbulb(){
 
+  this.isOn = false;
 
+}
+
+Lightbulb.prototype.flipSwitch = function(on){
+
+ if(on === "on"){
+
+    this.isOn = true;
+    return true;
+ }
+
+ else return false;
+
+};
  /* Step 89
  *
  * Declare a Cookie method called swipedByCookieMonster that accepts
@@ -1201,8 +1300,40 @@ Animal.prototype.isWarmBlooded = function(){
  * and the dayOfTheWeek is "Monday", return true.  Else return false.
  *
  */
+function Cookie(string){
+
+  this.flavor = string;
+
+}
+Cookie.prototype.swipedByCookieMonster = function(dayOfTheWeek){
+
+  if(this.flavor === "chocolate" && dayOfTheWeek === "Monday"){
+
+    return true;
+  }
+  else return false;
+};
+
+var junkFood = ["chips","soda","ice cream","popcorn","candy"];
+function Meal(Array){
+
+this.foods = Array;
+
+}
+
+function itContains(element,idx,array){
+
+  return  array.indexOf(junkFood[idx]) > -1;
+}
+
+Meal.prototype.containsJunkFood = function(junkFood){
 
 
+
+return this.foods.some(itContains);
+
+ 
+};
  /* Step 90
  *
  * Declare a Meal method called containsJunkFood that returns true if
@@ -1231,9 +1362,13 @@ Animal.prototype.isWarmBlooded = function(){
  * and assign the values to each variable below.
  *
  */
-var warmBloodedAnimal;
-var coldBloodedAnimal;
-var notWarmOrColdAnimal;
+
+var monkey = new Animal("Monkey","male");
+var fish = new Animal("Fish","female");
+var elephant = new Animal("Elephant","male");
+var warmBloodedAnimal = monkey.isWarmBlooded();
+var coldBloodedAnimal = fish.isWarmBlooded();
+var notWarmOrColdAnimal = elephant.isWarmBlooded();
 
 
 /* Step 92
@@ -1242,8 +1377,11 @@ var notWarmOrColdAnimal;
  * and assign the values to each variable below.
  *
  */
-var streetDriving;
-var forwardDriving;
+
+var accord = new Vehicle("Honda","Accord");
+var mustang = new Vehicle("Ford","Mustang");
+var streetDriving = accord.drive("peter pan street");
+var forwardDriving = mustang.drive("");
 
 
  /* Step 93
@@ -1252,8 +1390,11 @@ var forwardDriving;
  * and assign the values to each variable below.
  *
  */
-var decagon;
-var polygon;
+
+ var ten = new Shape(10);
+ var many = new Shape("many");
+var decagon = ten.getType();
+var polygon = many.getType();
 
 
 /* Step 94
