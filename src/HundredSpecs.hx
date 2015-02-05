@@ -1200,7 +1200,11 @@ class HundredSpecs
   {
     M.it("drive should be a function.", function() {
       var myVehicle = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
+<<<<<<< HEAD
       E.expect( untyped(Vehicle.drive) ).to.be.a("function");
+=======
+      E.expect( untyped(myVehicle.drive) ).to.be.a("function");
+>>>>>>> c2eaf8549094de0008e271905b74ee34c31af73b
     });
     M.it("should return 'Driving on {streetName}' if param is a string and not empty", function() {
       var cruiser = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
