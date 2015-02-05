@@ -938,7 +938,7 @@ function Shape(number){
 
 function Box(contents,isOpen){
   this.contents = contents;
-  this.isOpen = true;
+  this.isOpen = isOpen;
 
 }
 /**
@@ -1023,11 +1023,11 @@ var hexagon = new Shape(6);
 // Create 2 boxes
 var cat = new Animal("Cat","male");
 
-var catBox = new Box(cat);
+var catBox = new Box(cat,true);
 var christmasPresent = new Box("keyboard");
 christmasPresent.isOpen = false;
 // Create 2 doors
-var automaticDoor = new Door();
+var automaticDoor = new Door(true);
 var bankVault = new Door();
 bankVault.isOpen= false;
 
@@ -1180,13 +1180,13 @@ Vehicle.prototype.drive = function(streetName){
 
 Box.prototype.openBox = function(){
 
-  if(this.isOpen===true) {
+  if(this.isOpen) {
       
-      
+      this.isOpen = true;
       return true;
   }
 
-  else if(this.isOpen ===false){
+  else {
 
       this.isOpen = true;
       return true;
@@ -1204,7 +1204,7 @@ Box.prototype.openBox = function(){
  */
 function Door(isOpen){
 
-  this.isOpen = true;
+  this.isOpen = isOpen;
 
 }
 Door.prototype.openClose = function(){
@@ -1314,26 +1314,16 @@ Cookie.prototype.swipedByCookieMonster = function(dayOfTheWeek){
   else return false;
 };
 
-var junkFood = ["chips","soda","ice cream","popcorn","candy"];
+
 function Meal(Array){
 
 this.foods = Array;
 
 }
 
-function itContains(element,idx,array){
-
-  return  array.indexOf(junkFood[idx]) > -1;
-}
-
-Meal.prototype.containsJunkFood = function(junkFood){
 
 
 
-return this.foods.some(itContains);
-
- 
-};
  /* Step 90
  *
  * Declare a Meal method called containsJunkFood that returns true if
@@ -1403,8 +1393,10 @@ var polygon = many.getType();
  * and assign the values to each variable below.
  *
  */
-var openAClosedBox;
-var closeAnOpenBox;
+ var cardboard = new Box(["poop","cockroaches"],true);
+ var treasure = new Box(["gold","hammer"],false);
+var openAClosedBox = cardboard.openBox();
+var closeAnOpenBox = treasure.openBox();
 
 
  /* Step 95
@@ -1413,8 +1405,10 @@ var closeAnOpenBox;
  * and assign the values to each variable below.
  *
  */
-var openAClosedDoor;
-var closeAnOpenDoor;
+ var woodenDoor = new Door(true);
+ var brokenDoor = new Door(true);
+var openAClosedDoor = woodenDoor.openClose();
+var closeAnOpenDoor = brokenDoor.openClose();
 
 
 /* Step 96
@@ -1423,8 +1417,11 @@ var closeAnOpenDoor;
  * and assign the values to each variable below.
  *
  */
-var redShoesSize7;
-var blackShoesSize10;
+
+ var nike = new Shoe(7,"red");
+ var adidas = new Shoe(10,"black");
+var redShoesSize7 = nike.findShoes();
+var blackShoesSize10 = adidas.findShoes();
 
 
  /* Step 97
@@ -1433,8 +1430,11 @@ var blackShoesSize10;
  * and assign the values to each variable below.
  *
  */
-var farTooTallAStory;
-var shortStory;
+var fiveStoryDepa = new House(5);
+var sevenStoryDepa = new House(7);
+
+var farTooTallAStory = fiveStoryDepa.isATallStory(3);
+var shortStory = sevenStoryDepa.isATallStory();
 
 
  /* Step 98
@@ -1443,8 +1443,11 @@ var shortStory;
  * and assign the values to each variable below.
  *
  */
-var kitchenLightsOn;
-var porchLightsOff;
+
+var watt1 = new Lightbulb();
+var watt2 = new Lightbulb();
+var kitchenLightsOn = watt1.flipSwitch("on");
+var porchLightsOff = watt2.flipSwitch("whatever");
 
 
  /* Step 99
@@ -1453,8 +1456,10 @@ var porchLightsOff;
  * and assign the values to each variable below.
  *
  */
-var cookieMonsterPwns;
-var cookieMonsterBlocked;
+var chocolateChipCookie = new Cookie("chocolate");
+var vanillaCookie = new Cookie("vanilla");
+var cookieMonsterPwns = chocolateChipCookie.swipedByCookieMonster("Monday");
+var cookieMonsterBlocked = vanillaCookie.swipedByCookieMonster("Sunday");
 
 
  /* Step 100
@@ -1463,5 +1468,24 @@ var cookieMonsterBlocked;
  * and assign the values to each variable below.
  *
  */
-var badForYou;
-var goodForYou;
+var junkFood = ["chips","soda","ice cream","popcorn","candy"];
+ 
+ Meal.prototype.containsJunkFood = function(junkFood){
+
+
+
+return this.foods.some(itContains);
+
+ 
+};
+
+function itContains(element,idx,array){
+
+  return  array.indexOf(junkFood[idx]) > -1;
+}
+
+var chickenPasta =  new Meal(["pasta","chicken","popcorn","mayonnaise","ramen"]);
+var barbecue = new Meal(["ribs","rice","salad"]);
+var badForYou = chickenPasta.containsJunkFood(junkFood);
+var goodForYou = barbecue.containsJunkFood(["cheerios","cheetos","onion rings","ice cream"]);
+

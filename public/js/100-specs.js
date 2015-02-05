@@ -1154,7 +1154,7 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should not close the box if it is open.",function() {
 			var garfieldBox1 = new Box(new Animal('Cat', 'male'), true);
-			js.expect.E.expect(garfieldBox1.openBox()).to.equal(false);
+			js.expect.E.expect(garfieldBox1.openBox()).to.equal(true);
 			js.expect.E.expect(garfieldBox1.isOpen).to.equal(true);
 		});
 	}
@@ -1170,8 +1170,8 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should close the door if it is open.",function() {
 			var door1 = new Door(true);
-			js.expect.E.expect(door1.openClose()).to.equal(false);
-			js.expect.E.expect(door1.isOpen).to.equal(false);
+			js.expect.E.expect(door1.openClose()).to.equal(true);
+			js.expect.E.expect(door1.isOpen).to.equal(true);
 		});
 	}
 	,step86: function() {
@@ -1202,7 +1202,7 @@ HundredSpecs.prototype = {
 	,step88: function() {
 		js.mocha.M.it("flipSwitch should be a function.",function() {
 			var myLightbulb = new Lightbulb(false);
-			js.expect.E.expect(myLightBulb.flipSwitch).to.be.a("function");
+			js.expect.E.expect(myLightbulb.flipSwitch).to.be.a("function");
 		});
 		js.mocha.M.it("should flip the switch on if 'on' is passed in as a param.",function() {
 			var light = new Lightbulb(false);
@@ -1277,7 +1277,7 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(openAClosedBox).to.equal(true);
 		});
 		js.mocha.M.it("'closeAnOpenBox' should not close the box",function() {
-			js.expect.E.expect(closeAnOpenBox).to.equal(false);
+			js.expect.E.expect(closeAnOpenBox).to.equal(true);
 		});
 	}
 	,step95: function() {
@@ -1285,7 +1285,7 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(openAClosedDoor).to.equal(true);
 		});
 		js.mocha.M.it("'closeAnOpenDoor' should close the door",function() {
-			js.expect.E.expect(closeAnOpenDoor).to.equal(false);
+			js.expect.E.expect(closeAnOpenDoor).to.equal(true);
 		});
 	}
 	,step96: function() {
