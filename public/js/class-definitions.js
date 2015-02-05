@@ -992,11 +992,7 @@ function House(number){
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-function Meal(Array){
 
-this.foods = Array;
-
-}
 
 /**
  * Step 59
@@ -1317,6 +1313,27 @@ Cookie.prototype.swipedByCookieMonster = function(dayOfTheWeek){
   }
   else return false;
 };
+
+var junkFood = ["chips","soda","ice cream","popcorn","candy"];
+function Meal(Array){
+
+this.foods = Array;
+
+}
+
+function itContains(element,idx,array){
+
+  return  array.indexOf(junkFood[idx]) > -1;
+}
+
+Meal.prototype.containsJunkFood = function(junkFood){
+
+
+
+return this.foods.some(itContains);
+
+ 
+};
  /* Step 90
  *
  * Declare a Meal method called containsJunkFood that returns true if
@@ -1345,9 +1362,13 @@ Cookie.prototype.swipedByCookieMonster = function(dayOfTheWeek){
  * and assign the values to each variable below.
  *
  */
-var warmBloodedAnimal;
-var coldBloodedAnimal;
-var notWarmOrColdAnimal;
+
+var monkey = new Animal("Monkey","male");
+var fish = new Animal("Fish","female");
+var elephant = new Animal("Elephant","male");
+var warmBloodedAnimal = monkey.isWarmBlooded();
+var coldBloodedAnimal = fish.isWarmBlooded();
+var notWarmOrColdAnimal = elephant.isWarmBlooded();
 
 
 /* Step 92
@@ -1356,8 +1377,11 @@ var notWarmOrColdAnimal;
  * and assign the values to each variable below.
  *
  */
-var streetDriving;
-var forwardDriving;
+
+var accord = new Vehicle("Honda","Accord");
+var mustang = new Vehicle("Ford","Mustang");
+var streetDriving = accord.drive("peter pan street");
+var forwardDriving = mustang.drive("");
 
 
  /* Step 93
@@ -1366,8 +1390,11 @@ var forwardDriving;
  * and assign the values to each variable below.
  *
  */
-var decagon;
-var polygon;
+
+ var ten = new Shape(10);
+ var many = new Shape("many");
+var decagon = ten.getType();
+var polygon = many.getType();
 
 
 /* Step 94
